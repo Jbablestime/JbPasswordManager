@@ -12,6 +12,7 @@ pip install colorama
 - authorization system using set passcode. (must be numerical)
 - first time setup
 - passwords stored locally in a `.JSON` file
+- password combo support `email-password` format
 
 ## Python to Executable
 
