@@ -47,6 +47,25 @@ def set_information():
     os.system('pause')
     main_menu()
 
+def set_information_combo():
+    os.system('cls')
+
+    new_information = str.lower(input("Choose Platform >>> "))
+
+    print(f"Please enter the combo formatted like email-password`")
+    new_combo = input("Combo >>> ")
+
+    new_email, new_password = new_combo.split("-")
+    password["passwords"][f"{new_information}"]["email"] = new_email
+    password["passwords"][f"{new_information}"]["password"] = new_password
+    writePass(password)
+
+    print(green + f"New Email: {new_email}\nNew Password: {new_password}" + white)
+
+    os.system('pause')
+    main_menu()
+
+    
 def view_information():
     os.system('cls')
 
@@ -63,13 +82,15 @@ def main_menu():
     os.system('cls')
 
     print("Welcome to Password Manager, what would you like to do?")
-    print("Current Commands: View, Set")
+    print("Current Commands: View, Set, Combo")
     option = str.lower(input("Option >>> "))
 
     if option == "view":
         view_information()
     elif option == "set":
         set_information()
+    elif option == "combo":
+        set_information_combo()
 
 def auth():
     os.system('cls')
